@@ -1,0 +1,10 @@
+module decoder1to32
+(
+output[31:0]  out,
+input         enable,
+input[4:0]    address
+);
+    assign out = enable<<address; 
+endmodule
+
+The '<<' operator is a bit shift, meaning out will be enable shifted over a number of places equal to address. This causes the output to be a string of zeroes with '1' in the number bit given by the address. This is consistent with the behavior we want from a decoder. 
